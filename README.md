@@ -14,9 +14,10 @@ These are the complete writeups for the reverse engineering challenges I created
 |-----------|-----------|---------|--------------|---------|
 | **fast** | Easy | 100 | GDB basics, breakpoints, timing analysis | [📖 Writeup](./Fast/writeup.md) |
 | **random** | Easy | 100 | Register inspection, runtime values, dynamic analysis | [📖 Writeup](./Random/writeup.md) |
+| **Don't Close Me** | Easy | 200 | Python bytecode, decompilation, code modification | [📖 Writeup](./time/writeup.md) |
 | **Grandma's Security System** | Medium-Hard | 300 | Multi-layer VMs, strcmp bypass, hash bypass | [📖 Writeup](./Game/writeup.md) |
-| **Grandma's Hash Fortress** | Hard | 500 | String extraction, targeted brute force, info gathering | [📖 Writeup](./Hash/writeup.md) |
 | **SMT Hell** | Medium | 300 | Z3 solver, constraint extraction, automated reasoning | [📖 Writeup](./smt-hell/writeup.md) |
+| **Grandma's Hash Fortress** | Hard | 500 | String extraction, targeted brute force, info gathering | [📖 Writeup](./Hash/writeup.md) |
 
 ---
 
@@ -34,17 +35,22 @@ Learn to use GDB to pause program execution and control timing-based challenges.
 
 Discover that you don't need to predict random numbers — you can just read them from registers during execution.
 
-### 3. **Grandma's Security System** - VM Layers
+### 3. **Don't Close Me** - Python Bytecode
+*Introduction to Python reverse engineering and decompilation*
+
+Bridge the gap between native binaries and higher-level languages. Learn to decompile Python bytecode and modify source code to bypass timer-based protections.
+
+### 4. **Grandma's Security System** - VM Layers
 *Multi-layer challenge with progressive difficulty*
 
 Progress through four increasingly complex security layers, from simple string comparison to VM hash bypass. Teaches layer-by-layer analysis and runtime manipulation.
 
-### 4. **SMT Hell** - Automated Constraint Solving
+### 5. **SMT Hell** - Automated Constraint Solving
 *Introduction to Z3 and SMT solvers*
 
 Face complex, intertwined constraints that are impractical to solve manually. Learn when and how to use automated solvers like Z3.
 
-### 5. **Grandma's Hash Fortress** - Information > Brute Force
+### 6. **Grandma's Hash Fortress** - Information > Brute Force
 *Strategic analysis and targeted attacks*
 
 Extract hidden string pieces from binaries and use strategic brute forcing only for unknown gaps. Resist the urge to "break MD5" and focus on information gathering.
@@ -86,17 +92,21 @@ ctf-writeup/
 │   ├── writeup.md
 │   ├── random              # Challenge binary
 │   └── images/
+├── time/                   # Don't Close Me
+│   ├── writeup.md
+│   ├── time.pyc            # Python bytecode challenge
+│   └── images/
 ├── Game/                   # Grandma's Security System
 │   ├── writeup.md
 │   ├── game                # Challenge binary
 │   └── images/             # Layer-by-layer screenshots
-├── Hash/                   # Grandma's Hash Fortress
+├── smt-hell/
 │   ├── writeup.md
-│   ├── hash                # Challenge binary
+│   ├── NumberVerifier.class
 │   └── images/
-└── smt-hell/
+└── Hash/                   # Grandma's Hash Fortress
     ├── writeup.md
-    ├── NumberVerifier.class
+    ├── hash                # Challenge binary
     └── images/
 ```
 
